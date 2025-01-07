@@ -1,4 +1,4 @@
-# Sistem Pemesanan Barang API
+#  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />  Sistem Pemesanan Barang API
 
 API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan fitur seperti manajemen pengguna, produk, keranjang, pesanan, dan admin, API ini mendukung operasi dasar yang dibutuhkan oleh sistem e-commerce.
 
