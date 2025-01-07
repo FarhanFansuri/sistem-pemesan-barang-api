@@ -4,7 +4,7 @@ API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan 
 
 ## 👨‍💻 Developer
 
-**Farhan**  
+**Mochammad Farhan Fansuri**  
 Mahasiswa Teknik Informatika yang berfokus pada pengembangan backend menggunakan teknologi Node.js, Express.js, dan MongoDB.  
 - **GitHub**: [Farhan](https://github.com/FarhanFansuri)  
 - **Email**: [farhanfansuri2023@gmail.com](mailto:farhanfansuri2023@gmail.com)  
