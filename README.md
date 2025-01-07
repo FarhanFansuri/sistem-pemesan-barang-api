@@ -5,6 +5,7 @@ API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan 
 ## 📚 Fitur Utama
 - **Manajemen Pengguna**: Registrasi dan login pengguna.
   - Menggunakan JWT(JSON Web Token)
+  - Authentikasi dan Authorisasi
 - **Manajemen Produk**: Melihat dan mencari produk berdasarkan kategori atau kata kunci.
 - **Keranjang**: Menambahkan, melihat, dan mengelola item di keranjang pengguna.
 - **Pesanan**: Membuat pesanan baru dan melihat riwayat pesanan.
