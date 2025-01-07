@@ -14,7 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/ecommerce')
     console.log("connected!")
 })
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.get('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json())
 app.use('/auth', routerAuth)
 app.use('/products', routerProduct)
