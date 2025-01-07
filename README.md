@@ -7,8 +7,11 @@ API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan 
   - Menggunakan JWT(JSON Web Token)
   - Authentikasi dan Authorisasi
 - **Manajemen Produk**: Melihat dan mencari produk berdasarkan kategori atau kata kunci.
+  - Produk terdiri dari aneka produk, seperti baju, bukun, dan alat tulis.
 - **Keranjang**: Menambahkan, melihat, dan mengelola item di keranjang pengguna.
-- **Pesanan**: Membuat pesanan baru dan melihat riwayat pesanan.
+  - Digunakan sebagai fitur untuk menyimpan barang yang hendak dipesan namun belum melalui proses pembayaran
+- **Pesanan/Order**: Membuat pesanan baru dan melihat riwayat pesanan.
+  - Fitur tersebut adalah fitur yang digunakan untuk memesan barang.
 
 ## 🛠️ Teknologi
 - **Node.js**: Runtime untuk menjalankan API.
