@@ -1,0 +1,346 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Online Goods Ordering System API",
+    "version": "1.0.0",
+    "description": "API for managing users, products, carts, orders, and admin functionalities in an online goods ordering system."
+  },
+  "servers": [
+    {
+      "url": "https://api.onlineordering.com",
+      "description": "Production Server"
+    },
+    {
+      "url": "http://localhost:3000",
+      "description": "Development Server"
+    }
+  ],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "summary": "Register a new user",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "John Doe"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "john.doe@example.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "securePassword123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User registered successfully"
+          },
+          "400": {
+            "description": "Bad request (e.g., email already in use)"
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "User login",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "john.doe@example.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "securePassword123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful"
+          },
+          "401": {
+            "description": "Unauthorized (e.g., invalid credentials)"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Get a list of all products",
+        "tags": ["Products"],
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search keyword for products",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter products by category",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort products by price or popularity",
+            "schema": {
+              "type": "string",
+              "enum": ["price", "popularity"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "12345"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Wireless Headphones"
+                      },
+                      "price": {
+                        "type": "number",
+                        "example": 99.99
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "High-quality wireless headphones"
+                      },
+                      "stock": {
+                        "type": "integer",
+                        "example": 50
+                      },
+                      "category": {
+                        "type": "string",
+                        "example": "Electronics"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cart": {
+      "get": {
+        "summary": "Get items in the user's cart",
+        "tags": ["Cart"],
+        "responses": {
+          "200": {
+            "description": "Cart items retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string",
+                        "example": "12345"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Wireless Headphones"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "example": 2
+                      },
+                      "price": {
+                        "type": "number",
+                        "example": 99.99
+                      },
+                      "total": {
+                        "type": "number",
+                        "example": 199.98
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Add an item to the cart",
+        "tags": ["Cart"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_id": {
+                    "type": "string",
+                    "example": "12345"
+                  },
+                  "quantity": {
+                    "type": "integer",
+                    "example": 2
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Item added to the cart successfully"
+          },
+          "400": {
+            "description": "Bad request (e.g., invalid product ID or quantity)"
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "summary": "Create a new order",
+        "tags": ["Orders"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "address": {
+                    "type": "string",
+                    "example": "123 Main Street, City, Country"
+                  },
+                  "payment_method": {
+                    "type": "string",
+                    "enum": ["bank_transfer", "e_wallet"],
+                    "example": "bank_transfer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Order created successfully"
+          },
+          "400": {
+            "description": "Bad request (e.g., insufficient stock)"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all orders for the logged-in user",
+        "tags": ["Orders"],
+        "responses": {
+          "200": {
+            "description": "List of orders retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "order_id": {
+                        "type": "string",
+                        "example": "ORD12345"
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "product_id": {
+                              "type": "string",
+                              "example": "12345"
+                            },
+                            "name": {
+                              "type": "string",
+                              "example": "Wireless Headphones"
+                            },
+                            "quantity": {
+                              "type": "integer",
+                              "example": 2
+                            },
+                            "price": {
+                              "type": "number",
+                              "example": 99.99
+                            },
+                            "total": {
+                              "type": "number",
+                              "example": 199.98
+                            }
+                          }
+                        }
+                      },
+                      "status": {
+                        "type": "string",
+                        "example": "Shipped"
+                      },
+                      "total_price": {
+                        "type": "number",
+                        "example": 299.97
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-01-01T12:00:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
