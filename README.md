@@ -1,6 +1,14 @@
 # <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/>  Sistem Pemesanan Barang API <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/>  
 
-API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan fitur seperti manajemen pengguna, produk, keranjang, pesanan, dan admin, API ini mendukung operasi dasar yang dibutuhkan oleh sistem e-commerce.
+API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan fitur seperti manajemen pengguna, produk, keranjang, dan pesanan. API ini mendukung operasi dasar yang dibutuhkan oleh sistem e-commerce.
+
+## 👨‍💻 Developer
+
+**Farhan**  
+Mahasiswa Teknik Informatika yang berfokus pada pengembangan backend menggunakan teknologi Node.js, Express.js, dan MongoDB.  
+- **GitHub**: [Farhan](https://github.com/FarhanFansuri)  
+- **Email**: [farhanfansuri2023@gmail.com](mailto:farhanfansuri2023@gmail.com)  
+- **LinkedIn**: [Farhan](https://www.linkedin.com/in/farhanfansuri2002)
 
 ## 📚 Fitur Utama
 - **Manajemen Pengguna**: Registrasi dan login pengguna.
