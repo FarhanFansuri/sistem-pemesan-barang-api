@@ -18,11 +18,14 @@ const signUpController = async (req,res)=>{
     const username = req.body.username
     const password = await bcrypt.hash(req.body.password, 10)
     const email = req.body.email
+    const fullname = req.body.fullname
     const data = {
-        usename: username,
+        username: username,
         password: password,
-        email: email
+        email: email,
+        fullname: fullname
     }
+    await userModel.create(data)
     res.json({
         message: "user registred succesfully",
         data: data,
@@ -51,9 +54,19 @@ const jwtGenerator = (data)=>{
     return response
 }
 
+const userControllerGet = async (req, res) => {
+    try {
+        const data = await userModel.find(); // Gunakan await untuk mengambil data
+        res.status(200).json(data); // Kirim data dalam format JSON
+    } catch (err) {
+        res.status(500).json({ error: 'Gagal mengambil data produk', details: err.message });
+    }
+}
+
 module.exports = {
     jwtGenerator,
     jwtMiddleware,
     loginController,
-    signUpController
+    signUpController,
+    userControllerGet
 }

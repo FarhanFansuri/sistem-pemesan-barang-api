@@ -5,11 +5,14 @@ const {
     jwtGenerator,
     jwtMiddleware,
     loginController,
-    signUpController
+    signUpController,
+    userControllerGet
 } = require('../controllers/authController')
 
 router.post('/login', jwtMiddleware, loginController)
 
 router.post('/register', signUpController)
+
+router.get('/user', userControllerGet)
 
 module.exports = router
