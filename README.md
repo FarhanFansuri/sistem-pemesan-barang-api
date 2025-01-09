@@ -14,6 +14,11 @@ Mahasiswa Teknik Informatika yang berfokus pada pengembangan backend menggunakan
 - **Email**: [farhanfansuri2023@gmail.com](mailto:farhanfansuri2023@gmail.com)  
 - **LinkedIn**: [Farhan](https://www.linkedin.com/in/farhanfansuri2002)
 
+## 🛡️ Security
+- JWT(JSON Web Token) : digunakan untuk mendukung keamanan Authorisasi dan Authentikasi
+- Hash : Enkripsi password menggunakan Hash untuk meningkatkan keamanan Authentikasi
+- XSS Attack : menggunakan sanitasi input untuk mencegak serangan Cross-Site Scripting (XSS) 
+
 ## 📚 Fitur Utama
 - **Manajemen Pengguna**: Registrasi dan login pengguna.
   - Menggunakan JWT(JSON Web Token)
