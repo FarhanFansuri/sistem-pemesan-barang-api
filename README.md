@@ -4,7 +4,6 @@ API ini digunakan untuk mengelola proses pemesanan barang secara online. Dengan 
 
 ## 🔗 Link
 - PPT : [Canva](https://www.canva.com/design/DAGbrcA4AH0/jPRfPDIRLX07LzQ3mC6AbA/edit?utm_content=DAGbrcA4AH0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-- Video : [Youtube]()
 
 ## 👨‍💻 Developer
 
